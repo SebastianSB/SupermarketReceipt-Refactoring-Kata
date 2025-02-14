@@ -9,14 +9,14 @@ import {ProductUnit} from "../src/model/ProductUnit"
 import {assert} from "chai";
 
 describe('Supermarket', () => {
-    it('Ten percent discount', () => {
-        // ARRANGE
-        const catalog: SupermarketCatalog = new FakeCatalog();
-        const toothbrush: Product = new Product("toothbrush", ProductUnit.Each);
-        catalog.addProduct(toothbrush, 0.99);
-        const apples: Product = new Product("apples", ProductUnit.Kilo);
-        catalog.addProduct(apples, 1.99);
+            // ARRANGE
+    const catalog: SupermarketCatalog = new FakeCatalog();
+    const toothbrush: Product = new Product("toothbrush", ProductUnit.Each);
+    catalog.addProduct(toothbrush, 0.99);
+    const apples: Product = new Product("apples", ProductUnit.Kilo);
+    catalog.addProduct(apples, 1.99);
 
+    it('Ten percent discount', () => {
         const teller: Teller = new Teller(catalog);
         teller.addSpecialOffer(SpecialOfferType.TenPercentDiscount, toothbrush, 10.0);
 
